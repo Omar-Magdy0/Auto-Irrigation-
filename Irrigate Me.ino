@@ -285,7 +285,7 @@ Serial.print(crptxt[0]);Serial.print(cropFarmed_1);Serial.print(opttxt[0]);Seria
 Serial.print(crptxt[1]);Serial.print(cropFarmed_2);Serial.print(opttxt[1]);Serial.print(optimalWaterPerc_2);Serial.print(txt[1]);Serial.print(avgtxt[1]);Serial.print(avgRead2);Serial.println(txt[1]);
 Serial.print(mnlcntrltxt[0]);if(solenoid_1){Serial.print("ON");}else{Serial.print("OFF");}Serial.print(txt[0]);
 Serial.print(mnlcntrltxt[1]);if(solenoid_2){Serial.println("ON");}else{Serial.println("OFF");}
-;Serial.print(mnlcntrltxt[2]);if(pump){Serial.print("ON");}else{Serial.println("OFF");}
+;Serial.print(mnlcntrltxt[2]);if(pump){Serial.println("ON");}else{Serial.println("OFF");}
 
 }
 
@@ -316,6 +316,11 @@ else if((serialKeyRead == 3)&& manual){Serial.read();mnlControlCMD();}
 }
 
 delay(500);
-Serial.println();Serial.println("\nend");Serial.println("\n");
+Serial.println();Serial.print("^");
+Serial.print(manual);Serial.print(pump);Serial.print(solenoid_1);Serial.print(solenoid_2);
+Serial.print("+");Serial.print(cropFarmed_1);Serial.print("+");Serial.print(cropFarmed_2);Serial.print("+");Serial.print(interval);Serial.print("+");
+Serial.print(avgRead1);Serial.print("+");Serial.print(avgRead2);Serial.print("+");Serial.print(optimalWaterPerc_1);Serial.print("+");Serial.print(optimalWaterPerc_2);
+Serial.print("^");
+Serial.println("\nend");Serial.println("\n");
 
 }
